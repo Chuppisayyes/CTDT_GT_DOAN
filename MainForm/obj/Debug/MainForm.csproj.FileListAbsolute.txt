@@ -1,0 +1,10 @@
+D:\C# ( schools)\MainForm\obj\Debug\MainForm.csproj.AssemblyReference.cache
+D:\C# ( schools)\MainForm\obj\Debug\MainForm.csproj.SuggestedBindingRedirects.cache
+D:\C# ( schools)\MainForm\obj\Debug\MainForm.Properties.Resources.resources
+D:\C# ( schools)\MainForm\obj\Debug\MainForm.csproj.GenerateResource.cache
+D:\C# ( schools)\MainForm\obj\Debug\MainForm.csproj.CoreCompileInputs.cache
+D:\C# ( schools)\MainForm\bin\Debug\MainForm.exe.config
+D:\C# ( schools)\MainForm\bin\Debug\MainForm.exe
+D:\C# ( schools)\MainForm\bin\Debug\MainForm.pdb
+D:\C# ( schools)\MainForm\obj\Debug\MainForm.exe
+D:\C# ( schools)\MainForm\obj\Debug\MainForm.pdb
