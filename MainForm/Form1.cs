@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Text;
 
 namespace MainForm
 {
@@ -103,46 +104,65 @@ namespace MainForm
             {
                 Stack<Node> operandStack = new Stack<Node>();
                 Stack<Node> operatorStack = new Stack<Node>();
+                StringBuilder tempNumber = new StringBuilder();
 
                 foreach (char c in expression)
                 {
-                    if (char.IsDigit(c))
+                    if (char.IsDigit(c) || c == '.')
                     {
-                        Node operand = new Node { Operand = double.Parse(c.ToString()) };
-                        operandStack.Push(operand);
+                        // Tích hợp các chữ số (và dấu chấm thập phân) vào chuỗi tạm thời
+                        tempNumber.Append(c);
                     }
-                    else if (IsOperator(c))
+                    else
                     {
-                        Node currentOperator = new Node { Operator = c };
-
-                        while (operatorStack.Count > 0 && GetOperatorPriority(c) <= GetOperatorPriority(operatorStack.Peek().Operator))
+                        // Kiểm tra xem có số trong chuỗi tạm thời không
+                        if (tempNumber.Length > 0)
                         {
-                            Node topOperator = operatorStack.Pop();
-                            topOperator.RightNode = operandStack.Pop();
-                            topOperator.LeftNode = operandStack.Pop();
-                            operandStack.Push(topOperator);
+                            Node operand = new Node { Operand = double.Parse(tempNumber.ToString()) };
+                            operandStack.Push(operand);
+                            tempNumber.Clear(); // Xóa chuỗi tạm thời
                         }
 
-                        operatorStack.Push(currentOperator);
-                    }
-                    else if (c == '(')
-                    {
-                        operatorStack.Push(new Node { Operator = c });
-                    }
-                    else if (c == ')')
-                    {
-                        while (operatorStack.Count > 0 && operatorStack.Peek().Operator != '(')
+                        if (IsOperator(c))
                         {
-                            Node topOperator = operatorStack.Pop();
-                            topOperator.RightNode = operandStack.Pop();
-                            topOperator.LeftNode = operandStack.Pop();
-                            operandStack.Push(topOperator);
-                        }
+                            Node currentOperator = new Node { Operator = c };
 
-                        // Pop '('
-                        if (operatorStack.Count > 0)
-                            operatorStack.Pop();
+                            while (operatorStack.Count > 0 && GetOperatorPriority(c) <= GetOperatorPriority(operatorStack.Peek().Operator))
+                            {
+                                Node topOperator = operatorStack.Pop();
+                                topOperator.RightNode = operandStack.Pop();
+                                topOperator.LeftNode = operandStack.Pop();
+                                operandStack.Push(topOperator);
+                            }
+
+                            operatorStack.Push(currentOperator);
+                        }
+                        else if (c == '(')
+                        {
+                            operatorStack.Push(new Node { Operator = c });
+                        }
+                        else if (c == ')')
+                        {
+                            while (operatorStack.Count > 0 && operatorStack.Peek().Operator != '(')
+                            {
+                                Node topOperator = operatorStack.Pop();
+                                topOperator.RightNode = operandStack.Pop();
+                                topOperator.LeftNode = operandStack.Pop();
+                                operandStack.Push(topOperator);
+                            }
+
+                            // Pop '('
+                            if (operatorStack.Count > 0)
+                                operatorStack.Pop();
+                        }
                     }
+                }
+
+                // Kiểm tra xem có số trong chuỗi tạm thời sau khi kết thúc vòng lặp
+                if (tempNumber.Length > 0)
+                {
+                    Node operand = new Node { Operand = double.Parse(tempNumber.ToString()) };
+                    operandStack.Push(operand);
                 }
 
                 // Xử lý toán tử và toán hạng còn lại

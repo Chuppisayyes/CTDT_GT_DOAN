@@ -8,3 +8,13 @@ D:\C# ( schools)\MainForm\bin\Debug\MainForm.exe
 D:\C# ( schools)\MainForm\bin\Debug\MainForm.pdb
 D:\C# ( schools)\MainForm\obj\Debug\MainForm.exe
 D:\C# ( schools)\MainForm\obj\Debug\MainForm.pdb
+C:\Users\Admin\Downloads\CTDT_GT_DOAN-main\MainForm\obj\Debug\MainForm.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\CTDT_GT_DOAN-main\MainForm\obj\Debug\MainForm.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Downloads\CTDT_GT_DOAN-main\MainForm\obj\Debug\MainForm.Properties.Resources.resources
+C:\Users\Admin\Downloads\CTDT_GT_DOAN-main\MainForm\obj\Debug\MainForm.csproj.GenerateResource.cache
+C:\Users\Admin\Downloads\CTDT_GT_DOAN-main\MainForm\obj\Debug\MainForm.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\CTDT_GT_DOAN-main\MainForm\obj\Debug\MainForm.exe
+C:\Users\Admin\Downloads\CTDT_GT_DOAN-main\MainForm\obj\Debug\MainForm.pdb
+C:\Users\Admin\Downloads\CTDT_GT_DOAN-main\MainForm\bin\Debug\MainForm.exe.config
+C:\Users\Admin\Downloads\CTDT_GT_DOAN-main\MainForm\bin\Debug\MainForm.exe
+C:\Users\Admin\Downloads\CTDT_GT_DOAN-main\MainForm\bin\Debug\MainForm.pdb
